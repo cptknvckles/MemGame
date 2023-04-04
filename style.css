@@ -29,6 +29,8 @@ body{
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+    cursor: pointer;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .card:active{
@@ -53,3 +55,45 @@ body{
 .front{
     transform: rotateY(180deg);
 }
+
+.reset{
+    width: 12em;
+    height: 4em;
+    position: absolute;
+    bottom: 5em;
+    right: 46%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.reset:hover{
+    background-color: #3e8e41; /* Dark green */
+    transform: scale(1.1);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*MODAL HERE*/
+/* The modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  }
+  

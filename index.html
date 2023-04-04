@@ -8,6 +8,16 @@
     <title>Memory Match Challenge!</title>
 </head>
 <body>
+    <div class="modal-container">
+    <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>New game started!</p>
+              <button id="ok-button">OK</button>
+            </div>
+        </div>
+    </div>
     <div class="game-container">
             <div class="card" data-name="apple">
                 <img class="front" src="/images/memGameApple2.png">
@@ -58,6 +68,7 @@
                 <img src="images/memGameCardBack2.png" class="back">
             </div>
     </div>
+    <button class="reset">Shuffle</button>
     <script src="index.js"></script>
 </body>
 </html>

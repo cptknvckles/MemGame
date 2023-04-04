@@ -2,6 +2,7 @@ const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let lockBoard = false
 let firstCard, secondCard;
+const shuffleButton = document.querySelector('.reset')
 
 function flipCard() {
   if(lockBoard) return
@@ -46,49 +47,26 @@ function resetBoard(){
     [firstCard, secondCard] = [null, null]
 }
 
-(function shuffle(){
+function shuffle(){
     cards.forEach(card => {
         let randomPosition = Math.floor(Math.random() * 12)
         card.style.order = randomPosition
+        //reset all cards to inital state
+        card.classList.remove('flip');
+        cards.forEach((card) => {
+            card.addEventListener('click', flipCard);
+        });
     })
-})()
+}
+
+shuffle()
+
 // Add the click event listener to each card
 cards.forEach((card) => {
   card.addEventListener('click', flipCard);
 });
+shuffleButton.addEventListener('click', () => {
+    shuffle();
+    alert('Cards shuffled!');
+})
 
-
-
-
-
-// const cards = document.querySelectorAll('.card')
-
-// let hasFlippedCard = false
-// let firstCard, secondCard
-
-// function flipCard(){
-//     this.classList.add('flip')
-//     if(!hasFlippedCard){
-//         //first click
-//         hasFlippedCard = true
-//         firstCard = this
-//     }else{
-//         //second click
-//         hasFlippedCard = false
-//         secondCard = this
-//         //do cards match?
-//         if(firstCard.dataset.name === secondCard.dataset.name){
-//             //cards match
-//             firstCard.removeEventListener('click', flipCard)
-//             secondCard.removeEventListener('click', flipCard)
-//         }else{
-//             //cards dont match
-//             setTimeout(() => {
-//                 firstCard.classList.remove('flip')
-//                 secondCard.classList.remove('flip')
-//             }, 1000)
-//         }
-//     }
-// }
-
-// cards.forEach(card => card.addEventListener('click', flipCard))
