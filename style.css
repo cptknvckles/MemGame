@@ -18,7 +18,19 @@ body{
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    animation: cardFall 1s ease-out;
     
+}
+
+@keyframes cardFall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .card{
@@ -32,7 +44,9 @@ body{
     cursor: pointer;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
-
+.card:hover{
+    transform: scale(0.97);
+}
 .card:active{
     transform: scale(.97);
     transition: transform .2s;
@@ -62,7 +76,7 @@ body{
     position: absolute;
     bottom: 5em;
     right: 46%;
-    background: linear-gradient(to right, #FFA500, #FF4500);
+    background: linear-gradient(45deg, #FFA500, #FF4500);
     background-size: 200% auto;
     border: none;
     color: black;
@@ -79,39 +93,12 @@ body{
   
   .reset:hover {
     background-position: -100% 0;
-    transform: scale(1.1);
+    transform: scale(0.9);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
 
-
-
-
-/* .reset{
-    width: 12em;
-    height: 4em;
-    position: absolute;
-    bottom: 5em;
-    right: 46%;
-    background-color: #f8f87ddd;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: all 0.2s ease-in-out;
+  .side-footer{
+    position: fixed;
     
-}
-
-.reset:hover{
-    background-color: #3FC8F4; 
-    transform: scale(1.1);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-} */
-
-  
+  }
